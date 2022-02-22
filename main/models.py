@@ -60,7 +60,7 @@ class Comment(models.Model):
     parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='replies')
 
     class Meta:
-        ordering = ['-created']
+        ordering = ['created']
 
     def save(self, *args, **kwargs):
         if not self.no:
