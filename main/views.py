@@ -17,7 +17,7 @@ class BoardView(ListView):
 
     def get_queryset(self):
         board_name = self.kwargs['board']
-        self.board = get_object_or_404(Board, board_name=board_name)
+        self.board = get_object_or_404(Board, name=board_name)
         return self.board.posts.all()
 
     def get_context_data(self, **kwargs):
@@ -28,7 +28,16 @@ class BoardView(ListView):
 
 class PostView(DetailView):
     model = Post
-    slug_field = 'slug'
     context_object_name = 'Post'
     template_name = 'main/post.html'
+
+    def get_object(self):
+        board = get_object_or_404(Board, name=self.kwargs['board'])
+        self.post = get_object_or_404(Post, no=self.kwargs['no'], board=board)
+        return self.post
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['Comments'] = self.post.comments.all()
+        return context
 
