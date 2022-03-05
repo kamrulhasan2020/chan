@@ -1,9 +1,9 @@
-asgiref @ file:///home/conda/feedstock_root/build_artifacts/asgiref_1642912811357/work
-backports.zoneinfo @ file:///home/conda/feedstock_root/build_artifacts/backports.zoneinfo_1603956084549/work
+asgiref==3.5.0
+backports.zoneinfo==0.2.1
 certifi==2021.10.8
 dj-database-url==0.5.0
-Django @ file:///home/conda/feedstock_root/build_artifacts/django_1643743103230/work
-djangorestframework @ file:///home/conda/feedstock_root/build_artifacts/djangorestframework_1639677796037/work
+Django==4.2.0
+djangorestframework==3.13.1
 flake8==4.0.1
 gunicorn==20.1.0
 mccabe==0.6.1
@@ -11,7 +11,7 @@ Pillow==9.0.1
 psycopg2==2.9.3
 pycodestyle==2.8.0
 pyflakes==2.4.0
-pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1633452062248/work
-sqlparse @ file:///home/conda/feedstock_root/build_artifacts/sqlparse_1631317292236/work
-typing-extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1644850595256/work
+pytz==2021.3
+sqlparse==0.4.2
+typing-extensions==4.1.1
 whitenoise==6.0.0
