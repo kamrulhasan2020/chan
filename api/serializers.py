@@ -18,7 +18,8 @@ class PostSerializer(serializers.ModelSerializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     post = serializers.ReadOnlyField(source='post.no')
-    parent = serializers.ReadOnlyField(source='parent.no')
+    parent = serializers.SlugRelatedField(slug_field='no', required=False,
+                                          queryset=Comment.objects.all())
 
     class Meta:
         model = Comment
